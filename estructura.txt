@@ -1,0 +1,83 @@
+la estructura principal del proyecto esta aqui, ademas de una dinamica aleatorea para conseguir algo recolectable:
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main() {
+    int dinero = 0;  // Elemento recolectable
+    int decision;
+    bool salir = false;
+
+    while (!salir) {
+        cout << "=== Historia Interactiva ===\n";
+        cout << "Dinero recolectado: $" << dinero << "\n";
+        cout << "1. Explorar la ciudad\n";
+        cout << "2. Adentrarse en el bosque\n";
+        cout << "3. Viajar al desierto\n";
+        cout << "4. Entrar a la misteriosa cueva\n";
+        cout << "5. Salir del programa\n";
+        cout << "Elige una opción (1-5): ";
+        cin >> decision;
+
+        switch (decision) {
+            case 1:
+                cout << "Explorando la ciudad...\n";
+                dinero += rand() % 20 + 1;  // Recolectar dinero aleatorio
+                break;
+            case 2:
+                cout << "Adentrándose en el bosque...\n";
+                dinero += rand() % 30 + 1;
+                break;
+            case 3:
+                cout << "Viajando al desierto...\n";
+                dinero += rand() % 25 + 1;
+                break;
+            case 4:
+                cout << "Entrando a la misteriosa cueva...\n";
+                dinero += rand() % 15 + 1;
+                break;
+            case 5:
+                cout << "Saliendo del programa. ¡Hasta luego!\n";
+                salir = true;
+                break;
+            default:
+                cout << "Opción inválida. Inténtalo de nuevo.\n";
+                break;
+        }
+
+        // Punto de interacción 2
+        if (!salir) {
+            cout << "Has llegado a un nuevo lugar. ¿Qué deseas hacer?\n";
+            cout << "1. Explorar\n";
+            cout << "2. Descansar\n";
+            cout << "3. Volver al menú principal\n";
+            cout << "Elige una opción (1-3): ";
+            cin >> decision;
+
+            switch (decision) {
+                case 1:
+                    cout << "Explorando...\n";
+                    dinero += rand() % 20 + 1;
+                    break;
+                case 2:
+                    cout << "Descansando...\n";
+                    // Puedes agregar más lógica según la historia
+                    break;
+                case 3:
+                    // Volver al menú principal
+                    break;
+                default:
+                    cout << "Opción inválida. Volviendo al menú principal.\n";
+                    break;
+            }
+        }
+
+        // Puedes agregar más puntos de interacción según lo necesites
+    }
+
+    return 0;
+}
+
+
