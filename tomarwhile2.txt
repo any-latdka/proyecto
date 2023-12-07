@@ -1,0 +1,190 @@
+tomar while2
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main() 
+{
+    int opcion;
+    int almas = 0;  // Elemento recolectable
+    int decision;
+    int salir = 0; // Inicializar salir
+    bool regresar = false;
+
+    do
+    {
+        cout << "=== Menú de Inicio ===\n" << "\nSelecciona un numero entre 1 y 4\n";
+        cout << "\n1. Como Jugar?";
+        cout << "\n2. Comenzar juego";
+        cout << "\n3. Opciones";
+        cout << "\n4. Salir\n";
+        cin >> opcion;
+
+        switch (opcion) 
+        {
+            case 1:
+                cout << "\nAlice in the wonderland es una historia vivida desde 4 distintas perspectivas donde el objetivo es recorrer el mundo y descubrir como has llegado hasta aquel misterioso sitio.";
+                cout << "\nLa mecánica del juego es sencilla, desde la elección de tu personaje, debes tomar diferentes decisiones pulsando los números correspondientes a tu elección."
+                    << "\nCabe señalar que a partir de la elección de tu personaje podrás notar un contador que llevará la suma de lo que vayas recolectando.";
+                break;
+
+            case 2:
+                while (!regresar) 
+                {
+                    cout << "\nAlmas atrapadas: " << almas << "\n";
+                    cout << "\nInicio: ¿Qué pasado quieres recordar?:";
+                    cout << "\nElige una opción entre 1 y 5: ";
+                    cout << "\n1. Alice Carmesí";
+                    cout << "\n2. Alice y el arma";
+                    cout << "\n3. Alice Queen";
+                    cout << "\n4. Alice mirror";
+                    cout << "\n5. También puedes regresar al menú del inicio\n";
+
+                    cin >> decision;
+
+                    switch (decision) 
+                    {
+                        case 1: // alice carmesi//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                            almas += rand() % 20 + 1; 
+                            cout << "\nUna noche, al dormir, después de un largo día de luchar en la milicia de tu aldea, despiertas en un extraño reino, al caminar, te topas con un arma y una flor.\n"; 
+                            cout << "Esto es extraño, no sé donde estoy...\n" << "¿Qué deseas hacer? "
+                                << "\n1. Agarrar el arma"
+                                << "\n2. Agarrar la flor" 
+                                << "\n3. Pasar de largo ambos objetos\n";
+
+                            cin >> decision;
+
+                            while (decision == 1 && !salir) // agarrar el arma----------------------------------------------------------------------------------------------
+                            {
+                                cout << "\nOhh~ Es una espada, esto será suficiente para adentrarme en este lugar\n";
+                                cout << "\nMiras a los alrededores y te das cuenta de las peculiaridades del reino, pero sobre todo, te llama la atención el bosque, tan carmesí como una batalla\n"
+                                    << "+Cuantas rarezas hay aquí... \n+Que extraño, allá hay un conejo y es muy deforme como para ser real. \n"
+                                    << "+Pero da igual, servirá para cenar\n"
+                                    << "El conejo nota tus intenciones\n";
+                                
+                                cout << "\n1. Perseguir al conejo\n" 
+                                    << "\n2. Ahuyentar al conejo\n"
+                                    << "\n3. Hablar con el conejo\n";
+                                cin >> opcion;
+
+                                switch (opcion) 
+                                {
+                                    case 1:
+                                        almas += rand() % 20 + 1;
+                                        cout << "\n¿Qué deseas hacer al conejo?\n";
+                                        cout << "\n1. Matar al conejo\n";
+                                        cout << "\n2. Levantar al conejo\n";
+                                        cout << "\n3. Seguir al conejo hasta el bosque\n";
+                                        cout << "\n4. Salir. ";
+                                        cin >> opcion;
+
+                                        switch (opcion) 
+                                        {
+                                            case 1:
+                                                cout << "El mundo está oscureciendo...? No!! Es el bosque... Siento una punzada en el pecho...\n"
+                                                    << "El bosque te ha atrapado\n";
+                                                almas += rand() % 25 + 1;
+                                                break;
+
+                                            case 2:
+                                                cout << "\nEl conejo te ha mordido el cuello... No hay nada que puedas hacer\n";
+                                                break;
+
+                                            case 3:
+                                                cout << "\nTe has quedado demasiado tiempo en el bosque, te atrapó. \nNunca nadie supo qué fue lo que te pasó.\n";
+                                                break;
+
+                                            case 4:
+                                                cout << "\nSalir. ";
+                                                salir = 1;
+                                                break;
+
+                                            default:
+                                                cout << "Opción inválida. Volviendo al menú principal.\n";
+                                                break;
+                                        }
+                                        break;
+
+                                    case 2:
+                                        // Ahuyentar al conejo
+                                        cout << "\nPruebita D:\n";
+                                        break;
+
+                                    case 3:
+                                        // Hablar con el conejo
+                                        break;
+
+                                    default:
+                                        cout << "Opción inválida. Volviendo al menú principal.\n";
+                                        break;
+                                }
+                                
+                                // Después de cada elección, preguntamos si desea continuar la historia
+                                cout << "\nPresiona 0 para ver tu historia, 1 para regresar a la parte del conejo:  ";
+                                cin >> salir;
+                            }
+                            
+                            //aqui debe ir agarra la flor******†***********""
+                            break;
+
+                        case 2: // alice y el arma///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                            // ... (puedes agregar la historia para esta opción)
+                            break;
+
+                        case 3:
+                            cout << "Viajando al desierto...\n";//alice queen //////////////////////////////////////////////////////////////////////////////////////////////////////////
+                            almas += rand() % 25 + 1;
+                            break;
+
+                        case 4:
+                            cout << "Entrando a la misteriosa cueva...\n";//alice mirror///////////////////////////////////////////////////////////////////////////////////////////////////
+                            almas += rand() % 15 + 1;
+                            break;
+
+                        case 5:
+                            cout << "Saliendo del programa. ¡Hasta luego!\n";
+                            salir = 1;
+                            break;
+
+                        default:
+                            cout << "Opción inválida. Inténtalo de nuevo.\n";
+                            break;
+                    }
+
+                    // Punto de interacción después de cada elección
+                    if (!salir) 
+                    {
+                        cout << "Has llegado a un nuevo lugar. ¿Qué deseas hacer?\n";
+                        cout << "1. Explorar\n";
+                        cout << "2. Descansar\n";
+                        cout << "3. Volver al menú principal\n";
+                        cout << "Elige una opción (1-3): ";
+                        cin >> decision;
+
+                        switch (decision) 
+                        {
+                            // ... (resto del código)
+                        }
+                    }
+                }
+                break;
+
+            case 3:
+                cout << "\nMostrando opciones: \n";
+                break; 
+
+            case 4:
+                cout << "\nSaliendo del juego.\n";
+                break;
+                
+            default:
+                cout << "\nOpción inválida. Inténtalo de nuevo.\n";
+                break;
+        } 
+
+    } while(opcion != 4 && !salir);
+    cout<<"\nSaliendo del juego\n";
+
+    return 0;
+}
