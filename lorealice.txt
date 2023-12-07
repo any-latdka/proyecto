@@ -1,0 +1,527 @@
+lore de alice1 clonado en los demas alice, ajustar cada lore dependiendo de las necesidades.
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main() 
+{
+    int opcion;
+    int experiencia = 0; 
+    int decision;
+    int salir = 0; // Inicializar salir
+    bool regresar = false;
+
+    do
+    {
+        cout << "=== Menú de Inicio ===\n" << "\nSelecciona un numero entre 1 y 4\n";
+        cout << "\n1. Como Jugar?";
+        cout << "\n2. Comenzar juego";
+        cout << "\n3. Opciones";
+        cout << "\n4. Salir";
+        cout << "\n5. Creditos.\n"
+        cin >> opcion;
+
+        switch (opcion) 
+        {
+            case 1:
+                cout << "\nAlice in the wonderland es una historia vivida desde 4 distintas perspectivas donde el objetivo es recorrer el mundo y descubrir como has llegado hasta aquel misterioso sitio.";
+                cout << "\nLa mecánica del juego es sencilla, desde la elección de tu personaje, debes tomar diferentes decisiones pulsando los números correspondientes a tu elección."
+                    << "\nCabe señalar que a partir de la elección de tu personaje podrás notar un contador que llevará la suma de lo que vayas recolectando.";
+                break;
+
+            case 2:
+                while (!regresar) 
+                {
+                    cout << "\nExperiencia adquirida: " << experiencia<< "\n";
+                    cout << "\nInicio: ¿Qué pasado quieres recordar?:";
+                    cout << "\nElige una opción entre 1 y 5: ";
+                    cout << "\n1. Alice Carmesí";
+                    cout << "\n2. Alice y el arma";
+                    cout << "\n3. Alice Queen";
+                    cout << "\n4. Alice mirror";
+                    cout << "\n5. También puedes regresar al menú del inicio\n";
+
+                    cin >> decision;
+
+                    switch (decision) 
+                    {
+                        case 1: // alice carmesi//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                            experiencia += rand() % 20 + 1; 
+                            cout << "\nUna noche, al dormir, después de un largo día de luchar en la milicia de tu aldea, despiertas en un extraño reino, al caminar, te topas con un arma y una flor.\n"; 
+                            cout << "Esto es extraño, no sé donde estoy...\n" << "¿Qué deseas hacer? "
+                                << "\n1. Agarrar el arma"
+                                << "\n2. Agarrar la flor" 
+                                << "\n3. Pasar de largo ambos objetos\n";
+
+                            cin >> decision;
+
+                            while (decision == 1 && !salir) // agarrar el arma----------------------------------------------------------------------------------------------
+                            {
+                                cout << "\nOhh~ Es una espada, esto será suficiente para adentrarme en este lugar\n";
+                                cout << "\nMiras a los alrededores y te das cuenta de las peculiaridades del reino, pero sobre todo, te llama la atención el bosque, tan carmesí como una batalla\n"
+                                    << "+Cuantas rarezas hay aquí... \n+Que extraño, allá hay un conejo y es muy deforme como para ser real. \n"
+                                    << "+Pero da igual, servirá para cenar\n"
+                                    << "El conejo nota tus intenciones\n";
+                                
+                                cout << "\n1. Perseguir al conejo\n" 
+                                    << "\n2. Ahuyentar al conejo\n"
+                                    << "\n3. Hablar con el conejo\n";
+                                cin >> opcion;
+
+                                switch (opcion) 
+                                {
+                                    case 1: //perseguir al conejo
+                                        experiencia += rand() % 20 + 1; 
+                                        cout << "\n¿Qué deseas hacer al conejo?\n";
+                                        cout << "\n1. Matar al conejo\n";
+                                        cout << "\n2. Levantar al conejo\n";
+                                        cout << "\n3. Seguir al conejo hasta el bosque\n";
+                                        cout << "\n4. Salir. ";
+                                        cin >> opcion;
+
+                                        switch (opcion) 
+                                        {
+                                            case 1:
+                                                cout << "El mundo está oscureciendo...? No!! Es el bosque... Siento una punzada en el pecho...\n"
+                                                    << "El bosque te ha atrapado\n";
+                                                experiencia += rand() % 20 + 1; 
+                                                break;
+
+                                            case 2:
+                                                cout << "\nEl conejo te ha mordido el cuello... No hay nada que puedas hacer\n";
+                                                break;
+
+                                            case 3:
+                                                cout << "\nTe has quedado demasiado tiempo en el bosque, te atrapó. \nNunca nadie supo qué fue lo que te pasó.\n";
+                                                break;
+
+                                            case 4:
+                                                cout << "\nSalir. ";
+                                                salir = 1;
+                                                break;
+
+                                            default:
+                                                cout << "Opción inválida. Volviendo al menú principal.\n";
+                                                break;
+                                        }
+                                        break;
+
+                                    case 2: // Ahuyentar al conejo
+                                        experiencia += rand() % 20 + 1; 
+                                        cout << "\n¿Qué deseas hacer al conejo?\n";
+                                        cout << "\n1. Lanzar una piedra al conejo\n";
+                                        cout << "\n2. Mojar al conejo\n";
+                                        cout << "\n3. Seguir al conejo hasta que se aleje\n";
+                                        cout << "\n4. Salir. ";
+                                        cin >> opcion;
+
+                                        switch (opcion) 
+                                        {
+                                            case 1:
+                                                cout << "La piedra ha aplastado al conejo, el bosque no esta feliz...\n" << "El bosque te ha atrapado.\n";
+                                                
+                                                break;
+
+                                            case 2:
+                                                cout << "\n+Vaya conejo!!! Ha quedado paralizado por el frio.\n"<<"El  olor nauseabundo que emana te ha hecho caer al suelo inconsciente, has sido consumido por las tierras del bosque.";
+                                                experiencia += rand() % 25 + 1; 
+                                                break;
+
+                                            case 3:
+                                                cout << "\nTe has adentrado demasiado en el bosque, te atrapó. \nLas ramas de los arboles te han encerrado en una jaula. Nunca saldras del bosque.\n";
+                                                break;
+
+                                            case 4:
+                                                cout << "\nSalir. ";
+                                                salir = 1;
+                                                break;
+
+                                            default:
+                                                cout << "Opción inválida. Volviendo al menú principal.\n";
+                                                break;
+                                        }
+                                        break;
+
+                                    case 3: // Hablar con el conejo
+                                    experiencia += rand() % 30 + 1; 
+                                        cout << "\n¿Qué deseas hacer al conejo?\n";
+                                        cout << "\n1. Pedirle al conejo que te de una detallada explicacion sobre el reino.\n";
+                                        cout << "\n2. Preguntar en donde estan.\n";
+                                        cout << "\n3. Amenazar al conejo.\n";
+                                        cout << "\n4. Salir. ";
+                                        cin >> opcion;
+
+                                        switch (opcion) 
+                                        {
+                                            case 1:
+                                                cout << "Hace alguna vez, hubo alguien, que soño un lugar, del que ya no pudo despertar. Aquel sueño lo fue consumiendo, hasta que se volvio parte de el. Ahora esse sueño lucha por no desaparecer, trayendo nuevos wespedes. De esta forma, el suño no sera olvidado y nunca desaparecera el reino.\n";
+                                                experiencia += rand() % 25 + 1; 
+                                                break;
+
+                                            case 2:
+                                                cout << "\nEn wonderland, señorita!!!\n";
+                                                break;
+
+                                            case 3:
+                                                cout << "\nEl conejo se enojo, llamo a la corte y en tu juicio te condenaron a la horca.\n";
+                                                experiencia += rand() % 30 + 1; 
+                                                break;
+
+                                            case 4:
+                                                cout << "\nSalir. ";
+                                                salir = 1;
+                                                break;
+
+                                            default:
+                                                cout << "Opción inválida. Volviendo al menú principal.\n";
+                                                break;
+                                        }
+                                    
+                                        break;
+
+                                    default:
+                                        cout << "Opción inválida. Volviendo al menú principal.\n";
+                                        break;
+                                }
+                                
+                                // Después de cada elección, preguntamos si desea continuar la historia
+                                cout << "\nPresiona 1 para regresar al menu, 0 para regresar a la parte del conejo:\n";
+                                cin >> salir;
+                            }
+                            
+                            //aqui debe agarrar la flor***†***""****************************
+              
+                            while (decision == 2 && !salir) // agarrar la flor
+                            
+                            {
+                                cout << "\nOhh~ Es una flor, su fragancia es embriagadora\n";
+                                cout << "\nMiras a los alrededores y te das cuenta de que por todo el lugar hay rosales.\n"
+                                << "+Quien habra plantado tantas rosas?\nMientras caminas siguiendo los rosales, te espinas con una rosa\n+Sin dudarlo hace falta que las corten.\n"
+                                << "+Deberia arrancarlas yo?\n";
+                                
+                                cout << "\n1. Arrancar las rosas.\n" 
+                                << "\n2. Aplastar los rosales.\n"
+                                << "\n3. Seguir el sendero de los rosales\n";
+                                cin >> opcion;
+                                
+                                switch (opcion) 
+                                {
+                                    case 1: //arrancar las rosa
+                                    experiencia += rand() % 20 + 1; 
+                                    cout << "\nAl jugar con las rosas, te das cuenta de que tu vision esta borrosa, y cada vez eres menos consciente.\n"<<"Que medidas vas a tomar?\n";
+                                    cout << "\n1. Seguir destruyendo las rosas.\n";
+                                    cout << "\n2. Sentarte un momento.\n";
+                                    cout << "\n3. Continuar siguiendo el camino de rosales.\n";
+                                    cout << "\n4. Salir.\n";
+                                    cin >> opcion;
+                            
+                                    switch (opcion)
+                                    {
+                                        case 1:
+                                        cout << "Te seguiste espinando, poco a poco caes inconciente al piso, para no volver a levantarte.\n"
+                                        << "El bosque te ha atrapado\n";
+                                        experiencia += rand() % 20 + 1; 
+                                        break;
+                                
+                                        case 2:
+                                        cout << "\nLas rosas son venenosas, las espinas y su toxicidad fluyen en ti, no hay nada que puedas hacer.\n";
+                                        break;
+                                
+                                        case 3:
+                                        cout << "\nMientras la toxicidad de las espinas fluye en ti, te desvaneces poco a poco.\nSin darte cuenta, terminaste sobre un arbol. La luz se apaga para ti.\n";
+                                        experiencia += rand() % 20 + 1; 
+                                        break;
+                                
+                                        case 4:
+                                        cout << "\nSalir. ";
+                                        salir = true;
+                                        break;
+                                
+                                        default:
+                                        cout << "Opción inválida. Volviendo al menú principal.\n";
+                                        break;
+                                    }
+                                    break;
+
+                                    case 2: // Aplastar los rosales
+                                        experiencia += rand() % 20 + 1; 
+                                        cout << "\n¿Qué deseas hacer?\n";
+                                        cout << "\n1. pisar la ultima rosa.\n";
+                                        cout << "\n2. Revisar en donde hay mas rosales.\n";
+                                        cout << "\n3. Darte la vuelta.\n";
+                                        cout << "\n4. Salir. ";
+                                        cin >> opcion;
+
+                                        switch (opcion) 
+                                        {
+                                            case 1:
+                                                cout << "Pisaste la ultima rosa, pero las enredaderas te atraparon\n"
+                                                    << "Nunca te soltaran las enredaderas.\n";
+                                                
+                                                break;
+
+                                            case 2:
+                                                cout << "\nGracias a que revisaste el bosque, te diste cuenta de lo bien que estan escondidas las enredaderas, felicidades!!\n";
+                                                experiencia += rand() % 20 + 1; 
+                                                break;
+
+                                            case 3:
+                                                cout << "\nFelicidades, ahora estas viendo tu ultimo recuerdo. Las enredaderas no son lo que parece...\n";
+                                                break;
+
+                                            case 4:
+                                                cout << "\nSalir. ";
+                                                salir = 1;
+                                                break;
+
+                                            default:
+                                                cout << "Opción inválida. Volviendo al menú principal.\n";
+                                                break;
+                                        }
+                                    break;
+                            
+                                    case 3: // seguir el sendero de los rosales
+                                        experiencia += rand() % 30 + 1; 
+                                        cout << "\n+ Es un lugar que parece que nunca va a acabar\n"<<"Y eso... A caso es un castilo?";
+                                        cout << "\n1. Dirigirte al castillo.\n";
+                                        cout << "\n2. Pasar de largo y seguir en el camino.\n";
+                                        cout << "\n3. Observar de lejos que sucede\n";
+                                        cout << "\n4. Salir. ";
+                                        cin >> opcion;
+
+                                        switch (opcion) 
+                                        {
+                                            case 1:
+                                                cout << "\nParece increible, pero te has dado cuenta que nadie esta al cuidado del castillo, cualquier persona seria capaz de entrar sin ningun esfuerzo.\n"
+                                                    <<"\nFelicidades, has encontrado un fallo";
+                                                experiencia += rand() % 20 + 1; 
+                                                break;
+
+                                            case 2:
+                                                cout << "\nEl castillo es hermoso, su bella arquitectura te dejo encimismada, al punto de no sentir cuando te apuñalaron\n";
+                                                break;
+
+                                            case 3:
+                                                cout << "\nA lo lejos, vez a una bella dama. Estas en los apocentos de la reina.\n";
+                                                break;
+
+                                            case 4:
+                                                cout << "\nSalir. ";
+                                                salir = 1;
+                                                break;
+
+                                            default:
+                                                cout << "Opción inválida. Volviendo al menú principal.\n";
+                                                break;
+                                        }
+                                    break;
+                            
+                                    default:
+                                    cout << "Opción inválida. Volviendo al menú principal.\n";
+                                    break;
+                                }
+                    
+                                cout << "\nPresiona 1 para ver tu historia, 0 para regresar a la parte de las rosas:  ";
+                                cin >> decision;
+                            } // end of agarrar la flor****************************************
+                            
+                             while (decision == 3 && !salir) // pasar de largo----------------------------------------------------------------------------------------------
+                            {
+                                cout << "\n+Sinceramente esto parece una trampa, parece un juego para confundirme aun mas.";
+                                cout << "\nDe verdad no tengo idea de lo que esta pasando aqui, incluso los arboles lloran.\n"
+                                    << "Como seguiste caminando, llegaste lejos y ahora no sabes donde estas. \n"
+                                    << "LLegas a uno de las aldeas del reino, febes investigar a la gente.\n"
+                                    << "El conejo nota tus intenciones\n";
+                                
+                                cout << "\n1. Entrar a la aldea.\n" 
+                                    << "\n2. Prender fuego a la aldea.\n"
+                                    << "\n3. Esconderte.\n";
+                                cin >> opcion;
+
+                                switch (opcion) 
+                                {
+                                    case 1: //entrar a la aldea
+                                        experiencia += rand() % 20 + 1; 
+                                        cout << "\n¿Qué deseas hacer en la historia?\n";
+                                        cout << "\n1. Competir en los juegos de las aldeas para ir conociendo a los pobladores.\n";
+                                        cout << "\n2. Infiltrarte entre la poblacion\n";
+                                        cout << "\n3. Robar insumos necesarios.\n";
+                                        cout << "\n4. Salir. ";
+                                        cin >> opcion;
+
+                                        switch (opcion) 
+                                        {
+                                            case 1:
+                                                cout << "\nGracias por participar, pero no estas lo suficientemente preparado para representar a la aldea, en terminos generales eso quiere decir que solo podrias ser lanzado a los leones para entretener las gradas, mientras todas las aldeas compiten.\n"
+                                                    << "Te encuentras amarrado, a punto de pelear contra un leon.\n";
+                                                experiencia += rand() % 20 + 1; 
+                                                break;
+
+                                            case 2:
+                                                cout << "\nUAsesinaste a una chica y usurpaste su identidad. Para tu desgracia, su hermana se dio cuenta y ahora te buscan... Alertaste al castillo sobre una posible intruza\n";
+                                                experiencia += rand() % 35 + 1; 
+                                                break;
+
+                                            case 3:
+                                                cout << "\nTe han descubierto, solo te queda huir antes de que sepan que no eres de este lugar...\n";
+                                                break;
+
+                                            case 4:
+                                                cout << "\nSalir. ";
+                                                salir = 1;
+                                                break;
+
+                                            default:
+                                                cout << "Opción inválida. Volviendo al menú principal.\n";
+                                                break;
+                                        }
+                                        break;
+
+                                    case 2: // prender fuego a la aldea
+                                        experiencia += rand() % 20 + 1; 
+                                        cout << "\n¿Qué deseas hacer en esta linea temporal?\n";
+                                        cout << "\n1. Quemar la aldea";
+                                        cout << "\n2. esperar a que los juegos terminen para prender fuego.\n";
+                                        cout << "\n3. PLUS: puedes quemar a una bruja.\n";
+                                        cout << "\n4. Salir. ";
+                                        cin >> opcion;
+
+                                        switch (opcion) 
+                                        {
+                                            case 1:
+                                                cout << "Un extraño accidente comenzo el fuego por la parte sur de la aldea, el saldo de muertos es del 45% y aun va en aumento. En cuanto el reino encuentre al responsable, sera enviado inmediatamente a la corte, para obtener la sancion necesaria (probablemente, mutilacion de extremidades).\n";
+                                                experiencia += rand() % 20 + 1; 
+                                                break;
+
+                                            case 2:
+                                                cout << "\nEl Ssaldo de fallecidos es del 52%, debido a los juegos, habia mas gente, de diferentes lugares, para tu fortuna, le atribuyeron el accidente a un par de campesinos.\n";
+                                                experiencia += rand() % 20 + 1; 
+                                                break;
+
+                                            case 3:
+                                                cout << "\nTomaste como excusa seguir a la corona y quemaste en la plaza a una mujer acusada de brujeria y echiseria, ahora todos te ven como un heroe y nadie sospecha algo.\n";
+                                                experiencia += rand() % 20 + 1; 
+                                                break;
+
+                                            case 4:
+                                                cout << "\nSalir. ";
+                                                salir = 1;
+                                                break;
+
+                                            default:
+                                                cout << "Opción inválida. Volviendo al menú.\n";
+                                                break;
+                                        }
+                                        break;
+
+                                    case 3: // Esconderte
+                                    experiencia += rand() % 20 + 1; 
+                                        cout << "\n¿Qué deseas hacer?\n";
+                                        cout << "\n1. Diambular cerca de la aldea, pero de forma discreta.\n";
+                                        cout << "\n2. Alejarte de la aldea.\n";
+                                        cout << "\n3. Colarte entre la gente.\n";
+                                        cout << "\n4. Salir. ";
+                                        cin >> opcion;
+
+                                        switch (opcion) 
+                                        {
+                                            case 1:
+                                                cout << "Viene la guardia real, pasan con los restos de lo que creyeron que era un intruso, debes estar al pendiente.\n";
+                                               
+                                                break;
+
+                                            case 2:
+                                                cout << "\nEse dia fue la guardia real en busca de delincuentes, de haber estado alli te hubieran llevado.\n";
+                                                break;
+
+                                            case 3:
+                                                cout << "\nTe confundieron con una comerciante que no logro pagar los impuestos, a raiz de esto te descubrieron\n";
+                                                experiencia += rand() % 30 + 1; 
+                                                break;
+
+                                            case 4:
+                                                cout << "\nSalir. ";
+                                                salir = 1;
+                                                break;
+
+                                            default:
+                                                cout << "Opción inválida. Volviendo al menú principal.\n";
+                                                break;
+                                        }
+                                    
+                                        break;
+
+                                    default:
+                                        cout << "Opción inválida. Volviendo al menú principal.\n";
+                                        break;
+                                }
+                                
+                                // Después de cada elección, preguntamos si desea continuar la historia
+                                cout << "\nPresiona 1 para ver tu historia, 0 para regresar a la parte de esconderte:\n";
+                                cin >> salir;
+                            } //end of pasar de largo
+                            
+                            break;
+
+                        case 2: // alice y el arma///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                            
+                        break;
+
+                        case 3:
+                            
+                        break;
+
+                        case 4:
+                            
+                        break;
+
+                        case 5:
+                            cout << "Saliendo del programa. ¡Hasta luego!\n";//regresar al menu principal////////////////////////////////////////////////////////////////////////////////////
+                            salir = 1;
+                            break;
+
+                        default:
+                            cout << "Opción inválida. Inténtalo de nuevo.\n";
+                            break;
+                    }
+
+                    // Punto de interacción después de cada elección
+                    if (!salir) 
+                    {
+                        cout << "\nHas llegado a un nuevo lugar, ¿Qué deseas hacer? (elige una opcion del 1 al 3)\n";
+                        cout << "1. Explorar historias\n";
+                        cout << "2. Descansar\n";
+                        cout << "3. Volver al menú principal\n";
+                        
+                        cin >> decision;
+
+                        switch (decision) 
+                        {
+                            // ... (resto del código)
+                        }
+                    }
+                }
+                break;
+
+            case 3:
+                cout << "\nMostrando opciones: \n"<<Si tuviera audio o animaciones, aqui irian jajaj;
+                break; 
+
+            case 4:
+                cout << "\nSaliendo del juego.\n";//salir 
+                break;
+                
+            case 5: cout<<"Mostrando creditos"<<"\nTrabajo desarrollado por Estephany Cortes Tolentino. Gracias a los profesores de mi carrera por aportar las bases de la progrmacion a la siguiene generacion"<<"\nY a Chatgpt por solucionar el problema que no pude hacer en 2 horas (era un ==)"
+                
+            default:
+                cout << "\nOpción inválida. Inténtalo de nuevo.\n";
+                break;
+        } 
+
+    } while(opcion != 4 && !salir);
+    cout<<"\nSaliendo del juego\n";
+
+    return 0;
+}
